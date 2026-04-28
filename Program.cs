@@ -26,6 +26,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     );
 
 builder.Services.AddScoped<IModuleService, ModuleService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 builder.Services.AddIdentity<User, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
