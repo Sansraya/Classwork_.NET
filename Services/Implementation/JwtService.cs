@@ -6,7 +6,7 @@ namespace Sem2.Services.Implementation
 {
     public class JwtService
     {
-        public void GenerateToken()
+        public string GenerateToken()
         {
             var secretKey= "my_secret_key_12345";
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
@@ -22,6 +22,7 @@ namespace Sem2.Services.Implementation
                 );
 
             var token = new JwtSecurityTokenHandler().WriteToken(tokenObj);
+            return token;
         }
     }
 }
